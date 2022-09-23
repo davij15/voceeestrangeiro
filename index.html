@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você é estrangeiro?</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+        header {
+            text-align: center;
+            font-size: 20pt;
+        }
+        div#divdados {
+            text-align: center;
+            font-size: 20pt;
+        }
+        div#divresultado {
+            text-align: center;
+            font-size: 20pt;
+        }
+        input {
+            font-size: 15pt;
+        }
+        div#divimagem {
+            text-align: center;
+        }
+        img {
+            width: 500px;
+            margin: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Você é estrangeiro?</h1>
+    </header>
+    <div id="divdados"> <!-- experimente digitar div#divresultado--> 
+        Informe a sua nacionalidade: <input type="text" id="país"> <input type="button" value="Verificar" onclick="verificar()">
+    </div>
+    <div id="divimagem">
+        <img src="pexels-photo-8828346.webp" alt="Imagem de bandeiras">
+    </div>
+    <div id="divresultado">
+        
+    </div>
+    <script>
+        function verificar() {
+            var país = window.document.querySelector('input#país')
+            var resultado = window.document.querySelector('div#divresultado')
+            resultado.innerHTML = `Seu país de origem é <strong>${país.value}</strong>.<br>`
+            if (país.value == 'Brasil') { //Não se esqueça do .value!
+                resultado.innerHTML += 'Você é brasileiro!' //Use += para não apagar o texto anterior da div
+            } else {
+                resultado.innerHTML += 'Você é estrangeiro! Bem-vindo ao Brasil!'
+            }
+        }
+    </script>
+</body>
+</html>
